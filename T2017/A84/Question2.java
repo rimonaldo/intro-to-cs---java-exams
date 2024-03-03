@@ -1,34 +1,8 @@
 package T2017.A84;
 
 public class Question2 {
-    // moving s steps of array a
-    // is a transformation of EVERY item of index i to index s+i
-    // * the transformation is circular :
-    // if array in size n , and transofrmation of size s than
-    // a[n-s] -> a[0]
-    // a[n-(s-1)] -> a[1]
-
-    // we are given an array that has been transformed S: arr -> arr2
-    // size of s is unknown (could also be 0)
-    // and a number - sum
-    // return if'f true if there are 2 numbers that sums to sum
-
-    // what do i know about this problem:
-    // brute force solution would be :
-    // O(N^2) - for each item -> sum with each other item
-    // * i should write a better solution than brute force
-
-    // i have kind of a sorted array
-
-    // binary search dosnt look to be good here O(logn)
-
-    // sliding window might work here O(n) X
-
-    // sorting the array and
-    // i can for each item in the array, run a binary search - that would work and
-    // will be O(nlogn)
-
     // two pointers
+    // find sum 
 
     // modified binary search to find pivot:
     // L,M,R - if M <= M+1 ---> than this portion is sorted (go left <--)
@@ -43,6 +17,7 @@ public class Question2 {
     // time complexity
 
     public static boolean findSum(int[] arr, int sum) {
+        // in rotated sorted array
         int l = 0;
         int r = arr.length - 1;
         int pivotIdx = 0;
