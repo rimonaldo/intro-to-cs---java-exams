@@ -34,6 +34,14 @@ public class Node {
         _rightSon = node;
     }
 
+    public static int what(Node root) {
+        if (root == null) {
+            return 0;
+        }
+
+        return what(root.getLeftSon()) + 1 + what(root.getRightSon());
+    }
+
     public static void printPostOrder(Node root) {
         if (root != null) {
             printPostOrder(root.getLeftSon());
@@ -62,6 +70,18 @@ public class Node {
         }
         return -1;
 
+    }
+
+    public static boolean something(Node node) {
+        if (node == null) {
+            return true;
+        }
+
+        if (node.getNumber() <= 0) {
+            return false;
+        }
+
+        return something(node.getLeftSon()) && something(node.getRightSon());
     }
 
     public static void main(String[] args) {
@@ -116,8 +136,9 @@ public class Node {
         ll.setLeftSon(lll);
 
         int res = root.find(root, 15);
-
-        System.out.println(res);
+        int what = what(root);
+        boolean something = something(root);
+        System.out.println(something);
 
     }
 }
